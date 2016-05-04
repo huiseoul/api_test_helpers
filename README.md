@@ -1,21 +1,11 @@
 ## 설치
 
-먼저 private repo에서 젬을 가져오기 위해 내 github 어카운트의 access token이 필요합니다.
-
-```
-curl -u 'username' -d '{"scopes":["repo"],"note":"Api Test Helpers"}' https://api.github.com/authorizations
-```
-
-가져온 GITHUB_TOKEN이라는 환경 변수로 저장합니다.
-
-그리고 젬을 설치합니다.
+먼저 젬을 설치합니다.
 
 ```
 # Gemfile
 group :test
-  gem 'api_test_helpers',
-      git: "https://#{ENV['GITHUB_TOKEN']}:x-oauth-basic@github.com/" \
-           'huiseoul/api_test_helpers.git'
+  gem 'api_test_helpers', github: 'huiseoul/huiseoul'
 end
 ```
 
